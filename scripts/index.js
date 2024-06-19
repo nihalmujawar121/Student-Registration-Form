@@ -4,9 +4,6 @@ let email = document.querySelector("#email");
 let mobile = document.querySelector("#mobile");
 
 let button = document.querySelector("#register-button");
-let table = document.querySelector(".table");
+let tableBody = document.querySelector("#tbody");
 
-
-button.addEventListener("click",()=>{
-    
-})
+button.addEventListener("click", () => {});
