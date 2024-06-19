@@ -7,7 +7,8 @@ let button = document.querySelector("#register-button");
 let tableBody = document.querySelector("#tbody");
 
 var studentArray = [];
-
+var flag = "create";
+var tempID;
 button.addEventListener("click", () => {});
 
 function displayStudentDetails() {
