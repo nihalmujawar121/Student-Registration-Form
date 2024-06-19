@@ -21,7 +21,12 @@ function displayStudentDetails() {
     <td>${studentArray[i].lastName}</td>
     <td>${studentArray[i].email}</td>
     <td>${studentArray[i].mobile}</td>
+    <td>
+    <button class="btn btn-success" onclick = "updateStudent(${i})">Edit </button>
+    <button class="btn btn-primary" onclick = "deleteStudent(${i})">Delete </button>
+    </td>
     `;
+    document.getElementById("tbody").innerHTML = table;
   }
 }
 
