@@ -30,6 +30,13 @@ function deleteStudent(id) {
   displayStudentDetails();
 }
 
+function clearText() {
+  firstName.value = "";
+  lastName.value = "";
+  email.value = "";
+  mobile.value = "";
+}
+
 function updateStudent(id) {
   tempID = id;
   flag = "update";
