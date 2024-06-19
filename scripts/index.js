@@ -30,4 +30,19 @@ function deleteStudent(id) {
   displayStudentDetails();
 }
 
-function updateStudent(id) {}
+function updateStudent(id) {
+  tempID = id;
+  flag = "update";
+  button.innerHTML = "Update";
+  let studentObject = {
+    firstName: firstName.value,
+    lastName: lastName.value,
+    email: email.value,
+    mobile: mobile.value,
+  };
+  firstName.value = studentArray[id].firstName;
+  lastName.value = studentArray[id].lastName;
+  email.value = studentArray[id].email;
+  mobile.value = studentArray[id].mobile;
+  studentArray[tempID] = studentObject;
+}
