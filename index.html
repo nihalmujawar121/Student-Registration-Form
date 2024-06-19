@@ -11,6 +11,7 @@
     <script
       src="node_modules/bootstrap/dist/js/bootstrap.min.js"
       defer></script>
+    <script src="scripts/index.js" defer></script>
   </head>
   <body>
     <header><h1 class="m-4">Student Registration Form</h1></header>
@@ -19,7 +20,7 @@
         <div class="container">
           <div class="row">
             <div class="col">
-              <div id="register-form" class="m-2 fs-3">Fill The Form</div>
+              <div id="register-form" class="m-2 fs-3">Fill the Form</div>
               <label for="firstname" class="form-label">First Name</label>
               <input
                 type="text"
@@ -45,7 +46,10 @@
                 placeholder="mobile"
                 id="mobile"
                 class="form-control" />
-              <button type="submit" class="btn btn-success m-2 col-8" id="register-button">
+              <button
+                type="button"
+                class="btn btn-success m-2 col-8"
+                id="register-button">
                 Register
               </button>
             </div>
@@ -60,7 +64,7 @@
         <table class="table">
           <thead>
             <tr>
-              <th scope="col">Sr.No.</th>
+              <th scope="col">Sr No</th>
               <th scope="col">First Name</th>
               <th scope="col">Last Name</th>
               <th scope="col">Email</th>

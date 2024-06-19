@@ -9,6 +9,7 @@ let tableBody = document.querySelector("#tbody");
 var studentArray = [];
 var flag = "create";
 var tempID;
+
 button.addEventListener("click", (event) => {
   if (flag === "create") {
     let studentObject = {
@@ -18,17 +19,22 @@ button.addEventListener("click", (event) => {
       mobile: mobile.value,
     };
 
-    if (firstName.value == "") return;
-    if (lastName.value == "") return;
-    if (email.value == "") return;
-    if (mobile.value == "") return;
+    if (
+      firstName.value == "" ||
+      lastName.value == "" ||
+      email.value == "" ||
+      mobile.value == ""
+    ) {
+      return;
+    }
     studentArray.push(studentObject);
     displayStudentDetails();
     clearText();
   } else {
-    button.innerHTML = "Update";
     updateStudent(tempID);
     displayStudentDetails();
+    clearText();
+    // button.innerHTML = "Update";
     button.innerHTML = "Register";
     flag = "create";
   }
@@ -46,16 +52,18 @@ function displayStudentDetails() {
     <td>${studentArray[i].email}</td>
     <td>${studentArray[i].mobile}</td>
     <td>
-    <button class="btn btn-success" onclick = "updateStudent(${i})">Edit </button>
+    <button class="btn btn-success" onclick = "editStudent(${i})">Edit </button>
     <button class="btn btn-primary" onclick = "deleteStudent(${i})">Delete </button>
     </td>
+    </tr>
     `;
-    document.getElementById("tbody").innerHTML = table;
+    // document.getElementById("tbody").innerHTML = table;
+    tableBody.innerHTML = table;
   }
 }
 
 function deleteStudent(id) {
-  studentArray.splice(id, 1);
+  studentArray.shift(id, 1);
   displayStudentDetails();
 }
 
@@ -66,19 +74,23 @@ function clearText() {
   mobile.value = "";
 }
 
-function updateStudent(id) {
+function editStudent(id) {
   tempID = id;
   flag = "update";
   button.innerHTML = "Update";
-  let studentObject = {
+
+  firstName.value = studentArray[id].firstName;
+  lastName.value = studentArray[id].lastName;
+  email.value = studentArray[id].email;
+  mobile.value = studentArray[id].mobile;
+}
+
+function updateStudent(id) {
+  studentArray[id] = {
     firstName: firstName.value,
     lastName: lastName.value,
     email: email.value,
     mobile: mobile.value,
   };
-  firstName.value = studentArray[id].firstName;
-  lastName.value = studentArray[id].lastName;
-  email.value = studentArray[id].email;
-  mobile.value = studentArray[id].mobile;
-  studentArray[tempID] = studentObject;
 }
+displayStudentDetails();
