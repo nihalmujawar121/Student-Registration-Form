@@ -9,7 +9,31 @@ let tableBody = document.querySelector("#tbody");
 var studentArray = [];
 var flag = "create";
 var tempID;
-button.addEventListener("click", () => {});
+button.addEventListener("click", (event) => {
+  if (flag === "create") {
+    let studentObject = {
+      firstName: firstName.value,
+      lastName: lastName.value,
+      email: email.value,
+      mobile: mobile.value,
+    };
+
+    if (firstName.value == "") return;
+    if (lastName.value == "") return;
+    if (email.value == "") return;
+    if (mobile.value == "") return;
+    studentArray.push(studentObject);
+    displayStudentDetails();
+    clearText();
+  } else {
+    button.innerHTML = "Update";
+    updateStudent(tempID);
+    displayStudentDetails();
+    button.innerHTML = "Register";
+    flag = "create";
+  }
+  event.preventDefault();
+});
 
 function displayStudentDetails() {
   let table = "";
