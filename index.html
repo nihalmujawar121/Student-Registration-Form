@@ -4,23 +4,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="styles/style.css" />
     <link
       rel="stylesheet"
       href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="styles/style.css" />
     <script
       src="node_modules/bootstrap/dist/js/bootstrap.min.js"
       defer></script>
     <script src="scripts/index.js" defer></script>
   </head>
   <body>
-    <header><h1 class="m-4">Student Registration Form</h1></header>
+    <header><h1 class="m-4 text-center">Student Registration Form</h1></header>
     <main>
       <form>
         <div class="container">
           <div class="row">
             <div class="col">
-              <div id="register-form" class="m-2 fs-3">Fill the Form</div>
+              <div id="register-form" class="m-2 fs-3 text-center">Fill the Form</div>
               <label for="firstname" class="form-label">First Name</label>
               <input
                 type="text"
@@ -46,12 +46,14 @@
                 placeholder="mobile"
                 id="mobile"
                 class="form-control" />
-              <button
-                type="button"
-                class="btn btn-success m-2 col-8"
-                id="register-button">
-                Register
-              </button>
+              <div class="d-flex justify-content-center">
+                <button
+                  type="button"
+                  class="btn btn-success m-3 col-12"
+                  id="register-button">
+                  Register
+                </button>
+              </div>
             </div>
           </div>
         </div>
