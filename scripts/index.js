@@ -29,3 +29,5 @@ function deleteStudent(id) {
   studentArray.splice(id, 1);
   displayStudentDetails();
 }
+
+function updateStudent(id) {}
