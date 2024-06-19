@@ -10,7 +10,21 @@ var studentArray = [];
 
 button.addEventListener("click", () => {});
 
+function displayStudentDetails() {
+  let table = "";
+  for (let i = 0; i < studentArray.length; i++) {
+    table += `
+    <tr>
+    <th scope ="row">${i}</th>
+    <td>${studentArray[i].firstName}</td>
+    <td>${studentArray[i].lastName}</td>
+    <td>${studentArray[i].email}</td>
+    <td>${studentArray[i].mobile}</td>
+    `;
+  }
+}
 
-function displayStudentDetails(){
-    
+function deleteStudent(id) {
+  studentArray.splice(id, 1);
+  displayStudentDetails();
 }
