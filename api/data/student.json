@@ -1,9 +1,11 @@
 {
   "student": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "firstName": "Nihal",
+      "lastName": "Mujawar",
+      "email": "nihalmujawar1234@oulook.com",
+      "mobile": "7507867843",
+      "id": 1
     }
   ]
 }

@@ -30,6 +30,21 @@ button.addEventListener("click", (event) => {
     studentArray.push(studentObject);
     displayStudentDetails();
     clearText();
+
+    fetch("http://localhost:3000/student", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(studentObject),
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((error) => {
+        console.error("Error:", error);
+      });
   } else {
     updateStudent(tempID);
     displayStudentDetails();
