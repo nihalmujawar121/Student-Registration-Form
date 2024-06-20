@@ -34,7 +34,6 @@ button.addEventListener("click", (event) => {
     updateStudent(tempID);
     displayStudentDetails();
     clearText();
-    // button.innerHTML = "Update";
     button.innerHTML = "Register";
     flag = "create";
   }
@@ -63,7 +62,7 @@ function displayStudentDetails() {
 }
 
 function deleteStudent(id) {
-  studentArray.shift(id, 1);
+  studentArray.splice(id, 1);
   displayStudentDetails();
 }
 
