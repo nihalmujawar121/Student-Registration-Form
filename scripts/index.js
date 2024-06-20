@@ -31,7 +31,20 @@ button.addEventListener("click", (event) => {
     displayStudentDetails();
     clearText();
 
-    storeInJson();
+    // fetch("http://localhost:3000/student", {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-Type": "application/json",
+    //   },
+    //   body: JSON.stringify(studentObject),
+    // })
+    //   .then((response) => response.text())
+    //   .then((data) => {
+    //     console.log(data);
+    //   })
+    //   .catch((error) => {
+    //     console.error("Error:", error);
+    //   });
   } else {
     updateStudent(tempID);
     displayStudentDetails();
@@ -96,19 +109,7 @@ function updateStudent(id) {
 }
 displayStudentDetails();
 
-function storeInJson() {
-  fetch("http://localhost:3000/student", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify(studentObject),
-  })
-    .then((response) => response.text())
-    .then((data) => {
-      console.log(data);
-    })
-    .catch((error) => {
-      console.error("Error:", error);
-    });
+
+function storeInJson(){
+  
 }
