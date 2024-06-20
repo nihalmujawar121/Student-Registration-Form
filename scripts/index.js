@@ -108,8 +108,3 @@ function updateStudent(id) {
   };
 }
 displayStudentDetails();
-
-
-function storeInJson(){
-  
-}
